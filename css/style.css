@@ -1,0 +1,157 @@
+* {
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Oswald', sans-serif;
+	color:#f1c40f;
+}
+
+p {
+  font-family: 'Arvo', serif;
+	color: #c4dbe1;
+}
+
+h2 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: capitalize;
+	color:  #0d5c5f;
+}
+body{
+    font-family:'Segoe UI', Tahoma;
+    background-color: #0d686b;
+    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png");
+}
+
+#wrapper {
+  height: 100%;
+  width: 60%;
+  min-width: 640px;
+  margin: auto;
+}
+
+.main, header, footer {
+    margin: 10px 0;
+    width: 60vw;
+    min-width: 640px;
+}
+        /*header*/
+header {
+  margin: 50px 0px;
+  padding: 0;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#logo {
+  min-width: 120px;
+  min-height: 100px;
+  background-image: url(../img/am.jpg);
+  background-size: cover;
+  border-radius: 10px;
+}
+
+hgroup {
+  width: 80%;
+}
+ hgroup h1 {
+  text-align: center;;
+}
+.hgroup-name {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/*main*/
+.main {
+    display: flex;
+}
+
+.skills {
+  background-color: #c4dbe1;
+  width: 40vw;
+  min-width: 300px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.skil {
+  line-height: 25px;
+  border-left: 5px solid #f1c40f;
+}
+
+.skil:hover{
+  border-left: 5px solid #0d686b;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.skills-left, .skills-header-left{
+  border-top-left-radius: 20px;
+}
+.skills-left-bottom, .skills-b-left {
+  border-bottom-left-radius: 20px;
+}
+.skills-left-bottom-right, .skills-b-right {
+  border-bottom-right-radius: 20px;
+}
+.skills-right,.skills-header-right {
+  border-top-right-radius: 20px;
+}
+.skills-header {
+  background-color: #92b0b8;
+}
+.certific {
+  background-image: url(../img/certificate.PNG);
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 150px;
+  background-position: center;
+}
+
+        /*footer*/
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 50px 0;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+}
+
+.resume {
+  background-image:  url(../img/down.png);
+}
+
+.resume:hover {
+  background-image:  url(../img/hdown.png);
+}
+
+.git {
+  background-image: url(../img/github.png);
+}
+
+.git:hover {
+  background-image: url(../img/hgithub.png);
+}
+
+.in {
+  background-image: url(../img/hlinkedin.png);
+}
+
+.in:hover {
+  background-image: url(../img/linkedin.png);
+}
+
+.down{
+ min-height: 140px;
+}
+
+.skil{
+  font-family: 'Arvo', serif;
+}
