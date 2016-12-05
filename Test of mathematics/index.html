@@ -118,8 +118,8 @@
     <div ng-controller="myAppCtrl">
         <div class="container">
           <div class="btn-group">
-            <button class="btn btn-default" ng-click="hideElem1 = !hideElem1;hideElem2 = true; ">Test</button>
-            <button class="btn btn-default" ng-click="hideElem2 = !hideElem2;hideElem1 = true;">Setting</button>
+            <button class="btn btn-default" ng-click="hideElem2 = true; hideElem1 = false; ">Test</button>
+            <button class="btn btn-default" ng-click="hideElem2 = !true; hideElem1 = !false;">Setting</button>
         </div>
 
           <div ng-hide="hideElem2">
