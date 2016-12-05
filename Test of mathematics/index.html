@@ -143,7 +143,7 @@
                   <input type="checkbox" checked ng-click="Symbol('/')"  ng-disabled="(staticSymbolMas[0]=='/' && staticSymbolMas.length ==1) ? true : false" />division (/)
                 </label>
               </div>
-              <button type="button"  class="btn btn-default" ng-click="newTasks()">Start</button>
+              <button type="button"  class="btn btn-default" ng-click="newTasks(); hideElem2 = true; hideElem1 = false;">Start</button>
           </div>
 
           <div ng-hide="hideElem1">
