@@ -120,22 +120,22 @@
           <div ng-hide="hideElem2">
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" checked ng-click="Symbol('+')"  ng-disabled="(staticSymbolMas[0]=='+' && staticSymbolMas.length == 1) ? true : false" />addition (+)<br />
+                  <input type="checkbox" checked ng-click="symbol('+')"  ng-disabled="(staticSymbolMas[0]=='+' && staticSymbolMas.length == 1) ? true : false" />addition (+)<br />
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" checked ng-click="Symbol('-')"  ng-disabled="(staticSymbolMas[0]=='-' && staticSymbolMas.length ==1) ? true : false" />subtraction (-)<br/>
+                  <input type="checkbox" checked ng-click="symbol('-')"  ng-disabled="(staticSymbolMas[0]=='-' && staticSymbolMas.length ==1) ? true : false" />subtraction (-)<br/>
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" checked ng-click="Symbol('*')"  ng-disabled="(staticSymbolMas[0]=='*' && staticSymbolMas.length ==1) ? true : false" />multiplication (*)<br/>
+                  <input type="checkbox" checked ng-click="symbol('*')"  ng-disabled="(staticSymbolMas[0]=='*' && staticSymbolMas.length ==1) ? true : false" />multiplication (*)<br/>
                 </label>
               </div>
               <div class="checkbox">
                 <label>
-                  <input type="checkbox" checked ng-click="Symbol('/')"  ng-disabled="(staticSymbolMas[0]=='/' && staticSymbolMas.length ==1) ? true : false" />division (/)
+                  <input type="checkbox" checked ng-click="symbol('/')"  ng-disabled="(staticSymbolMas[0]=='/' && staticSymbolMas.length ==1) ? true : false" />division (/)
                 </label>
               </div>
               <button type="button"  class="btn btn-default" ng-click="newTasks(); hideElem2 = true; hideElem1 = false;">Start</button>
