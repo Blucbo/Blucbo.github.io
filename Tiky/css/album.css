@@ -1,0 +1,126 @@
+* {
+  color: #fff;
+}
+
+a {
+    text-decoration:none;
+}
+.copyright {
+  z-index: 2;
+  left: inherit;
+  right: 40px;
+  transform: none;
+}
+
+.copyright-effect {
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.fp-controlArrow.fp-next,.fp-controlArrow.fp-prev  {
+  margin-top: 0;
+  border: none;
+  width: 50px;
+  height: 20px;
+}
+.fp-controlArrow.fp-next{
+  right: 40px;
+  background: url(../img/Right.png) no-repeat;
+}
+.fp-controlArrow.fp-prev {
+  left: 40px;
+  background: url(../img/Left.png) no-repeat;
+}
+
+.img1 {
+  background: url("https://static.pexels.com/photos/39018/cards-jass-cards-card-game-strategy-39018-large.jpeg") no-repeat center;
+  background-size: contain;
+}
+
+.number {
+  font-family: RobotoSlabLight;
+  position: absolute;
+  z-index: 2;
+  bottom: 40px;
+  left: 50%;
+  letter-spacing: 4px;
+  font-size: 20px;
+  transform: translateX(-50%);
+}
+
+.info-album {
+  opacity: 0.7;
+  z-index: 1;
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  font-size: x-small;
+  font-family: RobotoSlabLight;
+}
+
+
+.slid {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  left: -50vw;
+  position: absolute;
+  width: 50vw;
+  height: 100vh;
+  background-color: #00B7F9;
+  transition-property: left;
+  transition-duration: 2s;
+  box-sizing: border-box;
+  padding: 0 80px 0 40px;
+}
+
+.showSlid {
+  left: 0vw;
+}
+
+.slid button {
+  display: block;
+  margin-top: 20px;
+}
+
+.album-name {
+  height: 15px;
+  font-size: 4vw;
+  letter-spacing: 5px;
+  font-family: UniSansHeavy;
+}
+
+
+
+h2.album-name + p {
+  margin-bottom: 20px;
+  font-size: 1.6vw;
+  margin-top: 10px;
+}
+
+h2.album-name ~ p {
+  font-family: RobotoSlabLight,  monospace;
+}
+
+.slid button{
+  cursor: pointer;
+  width: 15vw;
+  height: 30px;
+  margin-top: 10px;
+  border: 2px #1B1B1B solid;
+  border-radius: 2px;
+  background: #1B1B1B;
+  color: white;
+  text-transform: capitalize;
+  font-family: UniSansHeavy;
+  font-size: 1vw;
+  letter-spacing: 2px;
+  outline: none;
+}
+.slid p {
+  font-size: 0.9vw;
+  margin-bottom: 15px;
+  line-height: 18px;
+  opacity: 0.8;
+}

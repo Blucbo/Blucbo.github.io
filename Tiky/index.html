@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiky</title>
+  <link rel="stylesheet" href="lib/fullpage/dist/jquery.fullpage.min.css" />
+  <script src="lib/jquery/dist/jquery.min.js" ></script>
+  <script src="lib/fullpage/dist/jquery.fullpage.min.js" defer></script>
+  <script src="lib/js/scriptAnim.js" ></script>
+  <script src="lib/js/headerFullpage.js"></script>
+  <script src="lib/js/script.js"></script>
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<style>
+@font-face {
+  font-family: UniSansHeavy;
+  src: url(fonts/Uni_Sans_Heavy.otf);
+}
+@font-face {
+  font-family: RobotoSlabLight;
+  src: url(fonts/RobotoSlab_Light.ttf);
+}
+@font-face {
+  font-family: RobotoSlabBold;
+  src: url(fonts/RobotoSlab-Bold.ttf);
+}
+@font-face {
+  font-family: Againts;
+  src: url(fonts/Againts.otf);
+}
+</style>
+<!-- loading!-->
+
+<div class="wrapper-loader">
+  <div class="title-loader">
+    <p class="title">tiky</p>
+    <div class="loader">
+      <p id="per"></p>
+      <div  id="load"></div>
+      <div class="line-load"></div>
+    </div>
+  </div>
+</div>
+<!--end loading!-->
+
+<header>
+  <div class="hamburger">&#9776;</div>
+  <div class="cross">&#735;</div>
+  <p class="header-name">tiky</p>
+  <p class="language">us/fr</p>
+    <div class="menu">
+      <ul>
+        <a href="#"><li>Home</li></a>
+        <a href="#"><li>Gallery</li></a>
+        <a href="#"><li>About</li></a>
+        <a href="#"><li>Contact</li></a>
+        <a href="#"><li>Map</li></a>
+      </ul>
+    </div>
+    <p class="copyright"><span class="opac">design by </span> Art Grove Studio <span class="opac">copyright © 2016</span></p>
+</header>
+
+<div class="slid">
+  <div class="about">
+    <span class="info">
+      <h1 >Hello,</h1>
+      <h2 >It is my portfolio.</h2>
+      <p class="main_text" >
+       Cras congue semper condimentum. Proin eu suscipit
+       massa, id iaculis lacus. Suspendisse ut odio id diam
+       vestibulum posuere. Nulla lobortis diam dui, id
+       elementum urna fermentum eu. Fusce venenatis
+       posuere finibus. Quisque tempor metus eget porttitor
+       tempor. Pellentesque nec arcu massa.
+      </p>
+      <h5>Awards</h5>
+      <p>Oscar Barnak Award 2016<br>
+         Renaissance Photography Prize 2016<br>
+         World Press Photo 2015
+      </p>
+      <ul>
+        <li><a href="#">twitter</a></li>
+        <li><a href="#">facebook</a></li>
+        <li><a href="#">instagram</a></li>
+        <li><a href="#">youtube</a></li>
+      </ul>
+    </span>
+    <span class="tiky"><p>tiky</p></span>
+    <div class="btn-v"><img src="img/Arrow.png" alt=""></div>
+  </div>
+</div>
+<div class="slid2">
+  <div class="contact">
+    <div class="btn-v2"><img src="img/ArrowR.png" alt=""></div>
+    <span class="tiky"><p>tiky</p></span>
+    <form action="">
+      <h1>feedback</h1>
+      <input type="text" class="inText" placeholder="name">
+      <input type="text" class="inText" placeholder="email">
+       <textarea name="comment" rows="4" placeholder="message"></textarea>
+      <button>submit</button>
+      <a href="">namesurname@tiky.com</a>
+    </form>
+  </div>
+</div>
+
+<!-- page-->
+<ul id="myMenu">
+   <li style="display:none" id="main" data-menuanchor="1Page" class="active"><a href="#1Page">01</a></li>
+   <li data-menuanchor="2Page"><a href="#2Page">01</a></li>
+   <li data-menuanchor="3Page"><a href="#3Page">02</a></li>
+   <li data-menuanchor="4Page"><a href="#4Page">03</a></li>
+   <li data-menuanchor="5Page"><a href="#5Page">04</a></li>
+   <li data-menuanchor="6Page"><a href="#6Page">05</a></li>
+   <li data-menuanchor="7Page"><a href="#7Page">06</a></li>
+   <li data-menuanchor="8Page"><a href="#8Page">07</a></li>
+ </ul>
+<div class="displ">
+  <div id="fullpage">
+        <div class="section" style="vertical-align: 0">
+            <div class="wr-white">
+                <div class="wr-inner">
+                    <div class="wr-child">
+
+                        <div class="left-mid-button">
+                            <div class="line"></div>
+                            <a class="left-text"href="#">About</a>
+                        </div>
+                        <div class="bottom-mid-button">
+                            <div class="line"></div>
+                            <a class="down"href="#" onclick="scrDownClicked()">scroll down</a>
+                        </div>
+                        <div class="btn-right">
+                          <div class="line"></div>
+                          <div class="right_text">Contact</div>
+                          <!-- <div class="right"></div> -->
+                        </div>
+                        <div class="info-page">
+                            <p class="title-text">Tiky</p>
+                            <h1 class="title-name">PHOTOGRAPHER PORTFOLIO</h1>
+                            <a class="title-btn" href="#" onclick="scrDownClicked()">order!</a>
+                            <!-- <input class="title-btn" type="button" value="ORDER" /> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+          <div class="wr-white" >
+            <a href="albums.html">
+              <div class="allbum" style="background: url(https://static.pexels.com/photos/145378/pexels-photo-145378-large.jpeg) no-repeat center; background-size: cover;">
+                <h2 class="allbum-name">animal life</h2>
+                <p>- animals</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="wr-white" >
+            <a href="albums.html">
+              <div class="allbum" style="background: url(https://static.pexels.com/photos/174667/pexels-photo-174667-large.jpeg) no-repeat center; background-size: cover;">
+                <h2 class="allbum-name">animal life</h2>
+                <p>- animals</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="wr-white" >
+            <a href="albums.html">
+              <div class="allbum" style="background: url(https://static.pexels.com/photos/8700/wall-animal-dog-pet-large.jpg) no-repeat center; background-size: cover;">
+                <h2 class="allbum-name">animal life</h2>
+                <p>- animals</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="wr-white" >
+            <a href="albums.html">
+              <div class="allbum" style="background: url(https://static.pexels.com/photos/10467/pexels-photo-10467-large.jpeg) no-repeat center; background-size: cover;">
+                <h2 class="allbum-name">animal life</h2>
+                <p>- animals</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="wr-white" >
+            <a href="albums.html">
+              <div class="allbum" style="background: url(https://static.pexels.com/photos/33045/lion-wild-africa-african-large.jpg) no-repeat center; background-size: cover;">
+                <h2 class="allbum-name">animal life</h2>
+                <p>- animals</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="wr-white" >
+            <a href="albums.html">
+              <div class="allbum" style="background: url( https://static.pexels.com/photos/169524/pexels-photo-169524-large.jpeg) no-repeat center; background-size: cover;">
+                <h2 class="allbum-name">animal life</h2>
+                <p>- animals</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="section">
+          <div class="wr-white" >
+            <a href="albums.html">
+              <div class="allbum" style="background: url(https://static.pexels.com/photos/91220/pexels-photo-91220-large.jpeg) no-repeat; background-size: cover;">
+                <h2 class="allbum-name">animal life</h2>
+                <p>- animals</p>
+              </div>
+            </a>
+          </div>
+        </div>
+    </div>
+</div>
+<!-- end page -->
+
+</body>
+</html>
