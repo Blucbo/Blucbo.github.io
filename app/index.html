@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products search</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.js"></script>
+    <script data-require="jquery@3.0.0" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+    <link data-require="bootstrap@*" data-semver="4.0.5" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" />
+    <!-- <script data-require="bootstrap@*" data-semver="4.0.5" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id='main'></div>
+
+    <script type="text/babel">
+    var PRODUCTS = [
+        {"id":1,"name":"Redhold","img":"https://robohash.org/doloremnecessitatibusharum.png?size=200x200&set=set1","cost":"80.04","description":"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.","presence":true},
+        {"id":2,"name":"Matsoft","img":"https://robohash.org/perferendisquaequi.png?size=200x200&set=set1","cost":"273.34","description":"Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.","presence":true},
+        {"id":3,"name":"Konklab","img":"https://robohash.org/expeditaquiet.png?size=200x200&set=set1","cost":"220.51","description":"Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.","presence":false},
+        {"id":4,"name":"Alpha","img":"https://robohash.org/magnamminusdolorum.png?size=200x200&set=set1","cost":"283.97","description":"Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.","presence":false},
+        {"id":5,"name":"Toughjoyfax","img":"https://robohash.org/nisiautemodio.png?size=200x200&set=set1","cost":"883.75","description":"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.","presence":true},
+        {"id":6,"name":"Hatity","img":"https://robohash.org/officiisculpareprehenderit.png?size=200x200&set=set1","cost":"5.87","description":"Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.","presence":true},
+        {"id":7,"name":"Fix San","img":"https://robohash.org/veleiussit.png?size=200x200&set=set1","cost":"817.88","description":"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.","presence":true},
+        {"id":8,"name":"Ronstring","img":"https://robohash.org/laboriosamaliquidaut.png?size=200x200&set=set1","cost":"623.95","description":"Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.","presence":false},
+        {"id":9,"name":"Fintone","img":"https://robohash.org/fugiatetconsequatur.png?size=200x200&set=set1","cost":"302.06","description":"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.","presence":true},
+        {"id":10,"name":"Biodex","img":"https://robohash.org/suscipitipsaconsequatur.png?size=200x200&set=set1","cost":"583.44","description":"Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.","presence":false},
+        {"id":11,"name":"Temp","img":"https://robohash.org/eosaet.png?size=200x200&set=set1","cost":"432.25","description":"Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.","presence":true},
+        {"id":12,"name":"Konklux","img":"https://robohash.org/rationenumquammaiores.png?size=200x200&set=set1","cost":"924.73","description":"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.","presence":false},
+        {"id":13,"name":"Zamit","img":"https://robohash.org/aliquideumplaceat.png?size=200x200&set=set1","cost":"146.45","description":"In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.","presence":true},
+        {"id":14,"name":"Voyatouch","img":"https://robohash.org/quidemmollitiaimpedit.png?size=200x200&set=set1","cost":"968.45","description":"Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.","presence":true},
+        {"id":15,"name":"Job","img":"https://robohash.org/nonexplicaboillum.png?size=200x200&set=set1","cost":"385.13","description":"Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.","presence":true},
+        {"id":16,"name":"Zathin","img":"https://robohash.org/suntnoncumque.png?size=200x200&set=set1","cost":"894.13","description":"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.","presence":false},
+        {"id":17,"name":"Stronghold","img":"https://robohash.org/oditquised.png?size=200x200&set=set1","cost":"378.77","description":"Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.","presence":true},
+        {"id":18,"name":"Duobam","img":"https://robohash.org/inventoreutqui.png?size=200x200&set=set1","cost":"717.82","description":"Sed ante. Vivamus tortor. Duis mattis egestas metus.\n\nAenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.","presence":false},
+        {"id":19,"name":"Ventosanzap","img":"https://robohash.org/possimusremquia.png?size=200x200&set=set1","cost":"676.43","description":"Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.","presence":true},
+        {"id":20,"name":"Stim","img":"https://robohash.org/magnamanimiaperiam.png?size=200x200&set=set1","cost":"645.49","description":"In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.","presence":false}
+      ]
+      var Product = React.createClass({
+          getInitialState: function(){
+            return {isSelected: false};
+          },
+          handleClick: function(){
+            this.setState({
+              isSelected: !this.state.isSelected
+            })
+          },
+          render: function() {
+           return  (
+              <div className="col-sm-4 col-md-3" onClick={this.handleClick} >
+                <div className="thumbnail">
+                  <img className={this.state.isSelected ? 'product-image' : ''} src={this.props.img} />
+                  <div className="caption">
+                    <h3 className="product-name">{this.props.name}</h3>
+                    <p className="product-description">{this.state.isSelected ? this.props.description : ""} </p>
+                    <p className="product-presence" className={this.props.presence}> {this.state.isSelected ? this.props.presence ? 'In stock' : 'Under the order' : ''} </p>
+                    <p className="product-cost "> {this.props.cost} </p>
+                  </div>
+                </div>
+              </div>
+            );
+          }
+      });
+
+      var ProductsList = React.createClass({
+          getInitialState: function() {
+              return {
+                  displayedProducts: PRODUCTS
+              };
+          },
+
+          handleSearch: function(event) {
+              var searchQuery = event.target.value.toLowerCase();
+              var displayedProducts = PRODUCTS.filter(function(el) {
+                  var searchValue = el.name.toLowerCase();
+                  return searchValue.indexOf(searchQuery) !== -1;
+              });
+
+              this.setState({
+                  displayedProducts: displayedProducts
+              });
+          },
+          render: function() {
+              return (
+                  <div className="products">
+                  <form className="form-inline">
+                    <div className="form-group">
+                      <input type="text" className="form-control" id="exampleInputName2" placeholder="Search" onChange={this.handleSearch} />
+                    </div>
+                  </form>
+
+                      <div className="row">
+                          {
+                             this.state.displayedProducts.map(function(el) {
+                                  return <Product
+                                      key={el.id}
+                                      name={el.name}
+                                      cost={el.cost}
+                                      img={el.img}
+                                      description={el.description}
+                                      presence={el.presence}
+                                  />;
+                             })
+                          }
+                          </div>
+                  </div>
+              );
+          }
+      });
+
+      ReactDOM.render(
+          <ProductsList />,
+          document.getElementById("main")
+      );
+
+
+    </script>
+</body>
+</html>

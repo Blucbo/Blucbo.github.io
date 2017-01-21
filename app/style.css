@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#main {
+  margin-top: 20px;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+.product-image {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.product-image-open {
+  width: 300px;
+}
+
+.product-cost,
+.product-name {
+  text-align: center;
+}
+
+.form-group {
+  margin: auto;
+}
+.product-cost {
+  font-size: larger;
+}
+
+.product-description {
+  padding: 10px 0 0 25px;
+}
+
+.true,
+.false {
+  text-align: end;
+  font-weight: bold;
+  padding: 0 20px 0 0;
+}
+
+.true {
+  color: green;
+}
+
+.false {
+  color: red;
+}
